@@ -81,8 +81,8 @@ export function Select({ className, children, ...props }: SelectHTMLAttributes<H
   );
 }
 
-export function Label({ children, className }: React.HTMLAttributes<HTMLLabelElement>) {
-  return <label className={cn("block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide", className)}>{children}</label>;
+export function Label({ children, className, ...props }: React.LabelHTMLAttributes<HTMLLabelElement>) {
+  return <label className={cn("block text-xs font-semibold text-slate-700 mb-1.5 uppercase tracking-wide", className)} {...props}>{children}</label>;
 }
 
 export function Badge({ children, colorClasses, className }: { children: React.ReactNode; colorClasses: string; className?: string }) {

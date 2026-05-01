@@ -6,7 +6,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { Search, Command, ArrowRight, X } from 'lucide-react';
 import { getAllIssues } from '@/lib/firestore';
 import type { Issue, IssueStatus, Priority } from '@/lib/utils';
-import { STATUS_COLORS, PRIORITY_COLORS, STATUS_ICONS } from '@/lib/utils';
+import { STATUS_COLORS, PRIORITY_COLORS } from '@/lib/utils';
 import { Badge } from '@/components/ui';
 
 export default function CommandPalette() {
@@ -163,7 +163,7 @@ export default function CommandPalette() {
                         </div>
                         <div className="flex items-center gap-2">
                           <Badge colorClasses={STATUS_COLORS[issue.status]}>
-                            {STATUS_ICONS[issue.status]} {issue.status}
+                            {issue.status}
                           </Badge>
                           <Badge colorClasses={PRIORITY_COLORS[issue.priority]}>
                             {issue.priority}
