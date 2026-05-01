@@ -48,17 +48,17 @@ export interface Attachment {
 }
 
 export const STATUS_COLORS: Record<IssueStatus, string> = {
-  'Open': 'bg-stitch-500/10 text-stitch-400 border-stitch-500/20',
-  'In Progress': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-  'Resolved': 'bg-plasma-500/10 text-plasma-400 border-plasma-500/20',
-  'Closed': 'bg-cyber-500/10 text-cyber-400 border-cyber-500/20',
+  'Open': 'bg-blue-50 text-blue-700 border-blue-200',
+  'In Progress': 'bg-amber-50 text-amber-700 border-amber-200',
+  'Resolved': 'bg-primary-50 text-primary-700 border-primary-200',
+  'Closed': 'bg-slate-100 text-slate-700 border-slate-200',
 };
 
 export const PRIORITY_COLORS: Record<Priority, string> = {
-  'Low': 'bg-cyber-500/10 text-cyber-400 border-cyber-500/20',
-  'Medium': 'bg-amber-500/10 text-amber-400 border-amber-500/20',
-  'High': 'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  'Critical': 'bg-lava-500/10 text-lava-400 border-lava-500/20',
+  'Low': 'bg-slate-50 text-slate-600 border-slate-200',
+  'Medium': 'bg-amber-50 text-amber-700 border-amber-200',
+  'High': 'bg-orange-50 text-orange-700 border-orange-200',
+  'Critical': 'bg-red-50 text-red-700 border-red-200',
 };
 
 export const KANBAN_COLUMNS: IssueStatus[] = ['Open', 'In Progress', 'Resolved', 'Closed'];
