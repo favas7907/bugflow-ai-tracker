@@ -4,6 +4,41 @@
 
 @layer base {
   body {
-    @apply bg-surface-50 text-slate-900 font-sans antialiased;
+    @apply bg-[#040812] text-slate-200 font-sans antialiased;
   }
+}
+
+.stitch-gradient {
+  background: radial-gradient(circle at 50% 0%, #1e1b4b 0%, #042f2e 100%);
+}
+
+.cyber-particles {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: radial-gradient(rgba(20, 184, 166, 0.1) 1px, transparent 1px);
+  background-size: 30px 30px;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.glass-card {
+  @apply bg-white/[0.04] backdrop-blur-2xl border border-white/[0.08] shadow-glass-lg;
+}
+
+/* Custom Scrollbar for premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-white/10 rounded-full border-[2px] border-[#040812];
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-white/20;
 }
