@@ -53,9 +53,9 @@ export async function POST(req: NextRequest) {
     });
 
     await transporter.sendMail({
-      from: \`"Bug Tracker" <\${fromEmail}>\`,
+      from: `"Bug Tracker" <${fromEmail}>`,
       to: to || fromEmail,
-      subject: \`[Update] \${bugTitle} is now \${newStatus}\`,
+      subject: `[Update] ${bugTitle} is now ${newStatus}`,
       html: buildHtml(bugTitle, oldStatus, newStatus, assigneeName, timestamp),
     });
 
