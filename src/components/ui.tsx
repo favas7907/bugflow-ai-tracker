@@ -11,8 +11,8 @@ export function Card({ children, className, animate = true, hover = false, ...pr
   return (
     <div 
       className={cn(
-        "glass-card rounded-2xl p-6",
-        hover && "hover:shadow-[0_20px_40px_-15px_rgba(0,0,0,0.1)] transition-all duration-300 hover:-translate-y-1",
+        "bg-white border border-surface-200 shadow-sm rounded-2xl p-6",
+        hover && "hover:shadow-md transition-all duration-300",
         className
       )}
       {...props}
@@ -28,12 +28,12 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 export function Button({ children, variant = 'primary', size = 'md', className, disabled, ...props }: ButtonProps) {
-  const base = "inline-flex items-center justify-center gap-2 rounded-xl font-bold transition-all duration-200 focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed active:scale-[0.98]";
+  const base = "inline-flex items-center justify-center gap-2 rounded-xl font-medium transition-all duration-200 focus:ring-2 focus:ring-offset-2 disabled:opacity-50 disabled:cursor-not-allowed";
   const variants = {
-    primary: "bg-black text-white hover:bg-zinc-800 focus:ring-black shadow-md",
-    secondary: "bg-white text-black border border-zinc-200 hover:bg-zinc-50 focus:ring-zinc-200 shadow-sm",
+    primary: "bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-600 shadow-sm",
+    secondary: "bg-white text-surface-900 border border-surface-200 hover:bg-surface-50 focus:ring-surface-200 shadow-sm",
     danger: "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 shadow-sm",
-    ghost: "text-zinc-600 hover:bg-zinc-100 hover:text-black"
+    ghost: "text-surface-500 hover:bg-surface-100 hover:text-surface-900"
   };
   const sizes = {
     sm: "text-xs px-3 py-1.5",
@@ -55,7 +55,7 @@ export function Button({ children, variant = 'primary', size = 'md', className, 
 export function Input({ className, ...props }: InputHTMLAttributes<HTMLInputElement>) {
   return (
     <input className={cn(
-      "w-full rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 text-sm text-black placeholder-zinc-400 shadow-sm focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 focus:outline-none transition-all",
+      "w-full rounded-xl border border-surface-200 bg-white px-4 py-2.5 text-sm text-surface-900 placeholder-surface-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none transition-all",
       className
     )} {...props} />
   );
@@ -64,7 +64,7 @@ export function Input({ className, ...props }: InputHTMLAttributes<HTMLInputElem
 export function Textarea({ className, ...props }: TextareaHTMLAttributes<HTMLTextAreaElement>) {
   return (
     <textarea className={cn(
-      "w-full rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 text-sm text-black placeholder-zinc-400 shadow-sm focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 focus:outline-none transition-all",
+      "w-full rounded-xl border border-surface-200 bg-white px-4 py-2.5 text-sm text-surface-900 placeholder-surface-400 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none transition-all",
       className
     )} {...props} />
   );
@@ -73,7 +73,7 @@ export function Textarea({ className, ...props }: TextareaHTMLAttributes<HTMLTex
 export function Select({ className, children, ...props }: SelectHTMLAttributes<HTMLSelectElement>) {
   return (
     <select className={cn(
-      "w-full rounded-xl border border-zinc-200 bg-white px-3.5 py-2.5 text-sm text-black shadow-sm focus:border-primary-500 focus:ring-4 focus:ring-primary-500/10 focus:outline-none appearance-none cursor-pointer",
+      "w-full rounded-xl border border-surface-200 bg-white px-4 py-2.5 text-sm text-surface-900 shadow-sm focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 focus:outline-none appearance-none cursor-pointer",
       className
     )} {...props}>
       {children}
@@ -82,12 +82,12 @@ export function Select({ className, children, ...props }: SelectHTMLAttributes<H
 }
 
 export function Label({ children, className, ...props }: React.LabelHTMLAttributes<HTMLLabelElement>) {
-  return <label className={cn("block text-[13px] font-bold text-zinc-700 mb-1.5", className)} {...props}>{children}</label>;
+  return <label className={cn("block text-[13px] font-medium text-surface-900 mb-1.5", className)} {...props}>{children}</label>;
 }
 
 export function Badge({ children, colorClasses, className }: { children: React.ReactNode; colorClasses: string; className?: string }) {
   return (
-    <span className={cn("inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-bold border", colorClasses, className)}>
+    <span className={cn("inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium border", colorClasses, className)}>
       {children}
     </span>
   );
@@ -97,7 +97,7 @@ export function Avatar({ name, size = 'md' }: { name: string, size?: 'sm'|'md'|'
   const initials = name ? name.substring(0, 2).toUpperCase() : '?';
   const sizes = { sm: 'w-6 h-6 text-[10px]', md: 'w-8 h-8 text-xs', lg: 'w-10 h-10 text-sm' };
   return (
-    <div className={cn("rounded-full bg-primary-100 text-primary-700 flex items-center justify-center font-bold border border-primary-200 shrink-0", sizes[size])}>
+    <div className={cn("rounded-full bg-primary-50 text-primary-600 flex items-center justify-center font-bold border border-primary-100 shrink-0", sizes[size])}>
       {initials}
     </div>
   );
@@ -106,7 +106,7 @@ export function Avatar({ name, size = 'md' }: { name: string, size?: 'sm'|'md'|'
 export function LoadingScreen() {
   return (
     <div className="flex-1 flex items-center justify-center min-h-[50vh]">
-      <Loader2 className="w-8 h-8 animate-spin text-zinc-400" />
+      <Loader2 className="w-8 h-8 animate-spin text-surface-400" />
     </div>
   );
 }
@@ -114,11 +114,11 @@ export function LoadingScreen() {
 export function EmptyState({ icon, title, description }: { icon: React.ReactNode; title: string; description: string }) {
   return (
     <div className="flex flex-col items-center justify-center py-12 text-center">
-      <div className="w-16 h-16 bg-zinc-50 text-zinc-400 rounded-2xl flex items-center justify-center mb-4 border border-zinc-100 shadow-sm">
+      <div className="w-16 h-16 bg-surface-50 text-surface-400 rounded-2xl flex items-center justify-center mb-4 border border-surface-200 shadow-sm">
         {icon}
       </div>
-      <h3 className="text-lg font-bold text-black">{title}</h3>
-      <p className="text-sm text-zinc-500 mt-1 max-w-sm">{description}</p>
+      <h3 className="text-lg font-medium text-surface-900">{title}</h3>
+      <p className="text-sm text-surface-500 mt-1 max-w-sm">{description}</p>
     </div>
   );
 }

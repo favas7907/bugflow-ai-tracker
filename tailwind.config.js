@@ -15,20 +15,22 @@ module.exports = {
           200: '#bbf7d0',
           300: '#86efac',
           400: '#4ade80',
-          500: '#22c55e',
-          600: '#16a34a',
-          700: '#15803d',
+          500: '#22C55E', // Accent
+          600: '#16A34A', // Primary
+          700: '#15803D', // Primary Hover
           800: '#166534',
           900: '#14532d',
           950: '#052e16',
         },
         surface: {
-          50: '#ffffff',
-          100: '#fafafa',
-          200: '#f4f4f5',
-          300: '#e4e4e7',
-          800: '#27272a',
-          900: '#000000',
+          50: '#F9FAFB', // Background
+          100: '#f3f4f6',
+          200: '#E5E7EB', // Borders
+          300: '#d1d5db',
+          400: '#9ca3af',
+          500: '#6B7280', // Text Secondary
+          800: '#1f2937',
+          900: '#111827', // Text Primary
         }
       },
       fontFamily: {
@@ -36,12 +38,9 @@ module.exports = {
         heading: ['Inter', 'sans-serif'],
       },
       boxShadow: {
-        'soft': '0 2px 10px -2px rgba(0, 0, 0, 0.05)',
-        'premium': '0 10px 40px -10px rgba(0,0,0,0.08), 0 1px 3px rgba(0,0,0,0.05)',
+        'sm': '0 1px 2px 0 rgba(0, 0, 0, 0.05)',
+        'md': '0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
       },
-      animation: {
-        'pulse-soft': 'pulse 3s cubic-bezier(0.4, 0, 0.6, 1) infinite',
-      }
     },
   },
   plugins: [],

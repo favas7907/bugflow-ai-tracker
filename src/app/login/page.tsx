@@ -62,14 +62,14 @@ export default function LoginPage() {
         {/* Logo */}
         <motion.div className="text-center mb-8" variants={itemVariants}>
           <motion.div
-            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-black text-primary-500 mb-5 shadow-sm border border-zinc-200/60"
+            className="inline-flex items-center justify-center w-14 h-14 rounded-2xl bg-white text-primary-600 mb-5 shadow-sm border border-surface-200"
             whileHover={{ scale: 1.05, rotate: 5 }}
             transition={{ type: 'spring', stiffness: 300 }}
           >
             <Bug size={28} />
           </motion.div>
-          <h1 className="text-2xl font-bold text-black tracking-tight">Welcome back</h1>
-          <p className="text-zinc-500 text-sm mt-2 flex items-center justify-center gap-1.5">
+          <h1 className="text-2xl font-bold text-surface-900 tracking-tight">Welcome back</h1>
+          <p className="text-surface-500 text-sm mt-2 flex items-center justify-center gap-1.5">
             Sign in to your BugFlow workspace
           </p>
         </motion.div>
@@ -101,7 +101,7 @@ export default function LoginPage() {
           <form onSubmit={handleSubmit} className="space-y-5">
             {formError && (
               <motion.div
-                className="flex items-center gap-2 p-3 rounded-xl bg-red-50 text-red-600 text-sm font-bold border border-red-100"
+                className="flex items-center gap-2 p-3 rounded-xl bg-red-50 text-red-600 text-sm font-medium border border-red-100"
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
               >
@@ -112,7 +112,7 @@ export default function LoginPage() {
             <motion.div variants={itemVariants}>
               <Label htmlFor="login-email">Email</Label>
               <div className="relative">
-                <Mail size={16} className="absolute left-3.5 top-3 text-zinc-400" />
+                <Mail size={16} className="absolute left-3.5 top-3 text-surface-400" />
                 <Input
                   id="login-email"
                   type="email"
@@ -128,7 +128,7 @@ export default function LoginPage() {
             <motion.div variants={itemVariants}>
               <Label htmlFor="login-password">Password</Label>
               <div className="relative">
-                <Lock size={16} className="absolute left-3.5 top-3 text-zinc-400" />
+                <Lock size={16} className="absolute left-3.5 top-3 text-surface-400" />
                 <Input
                   id="login-password"
                   type="password"
@@ -149,9 +149,9 @@ export default function LoginPage() {
           </form>
         </motion.div>
 
-        <motion.p className="text-center text-sm text-zinc-500 mt-6" variants={itemVariants}>
+        <motion.p className="text-center text-sm text-surface-500 mt-6" variants={itemVariants}>
           Don&apos;t have an account?{' '}
-          <Link href="/signup" className="text-primary-600 font-bold hover:text-primary-700 transition-colors">
+          <Link href="/signup" className="text-primary-600 font-medium hover:text-primary-700 transition-colors">
             Create one
           </Link>
         </motion.p>
